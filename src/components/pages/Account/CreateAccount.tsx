@@ -2,7 +2,7 @@ import { Button, CircularProgress, Grid, makeStyles, Snackbar, TextField, Typogr
 import { Alert } from '@material-ui/lab';
 import { Form, Formik, FormikProps } from 'formik';
 import React, { useState } from 'react'
-import { useHistory } from 'react-router';
+// import { useHistory } from 'react-router';
 import * as yup from 'yup';
 import { UsersApiService } from '../../../services';
 
@@ -68,7 +68,7 @@ const validationSchema = yup.object().shape({
 
 const CreateAccount: React.FC = () => {
     const classes = useStyles();
-    const history = useHistory();
+    // const history = useHistory();
     const [openSnackbar, setOpenSnackbar] = useState(false);
     const [errorSnackbar, setErrorSnackbar]  = useState<boolean>(false);
 
@@ -88,7 +88,7 @@ const CreateAccount: React.FC = () => {
         }
         else
         {
-            history.replace('/');
+            // history.replace('/');
             setOpenSnackbar(true);
         }        
     }

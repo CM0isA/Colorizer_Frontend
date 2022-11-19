@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router';
+import { Route } from 'react-router';
 import { Layout, Authentication } from './components';
 import { Home } from './components/Home';
 
@@ -13,7 +13,7 @@ import ConfirmAccountPage from './components/pages/Account/ConfirmAccountPage';
 const MainLayout = () => (
   <Layout>
     <Authentication>
-      <Route path='/home/contact' component={Contact} />
+      <Route path='/home/contact' element={<Contact />} />
     </Authentication>
   </Layout>);
 
@@ -21,15 +21,13 @@ const MainLayout = () => (
 
 const App = () => (
   <AppContextProvider>
-    <Switch>
-      <Route path='/login' component={Login} />
-      <Route path='/createAccount' children={<CreateAccount />}  />
-      <Route path="/confirmAccount/:accountCode" children={<ConfirmAccountPage />} />
-      <Route path='/home/' component={MainLayout}></Route>
-      <Layout>
-        <Route exact path='/' component={Home} />
-      </Layout>
-    </Switch>
+    <Route path='/login' element={<Login />} />
+    <Route path='/createAccount' children={<CreateAccount />} />
+    <Route path="/confirmAccount/:accountCode" children={<ConfirmAccountPage />} />
+    <Route path='/home/' element={<MainLayout />} ></Route>
+    <Layout>
+      <Route path='/' element={ <Home />} />
+    </Layout>
   </AppContextProvider>
 )
 

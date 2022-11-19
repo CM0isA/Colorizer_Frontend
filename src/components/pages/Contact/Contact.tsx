@@ -6,7 +6,7 @@ import { createStyles, withStyles, Theme, makeStyles } from '@material-ui/core/s
 import InputBase from '@material-ui/core/InputBase';
 import { Report } from '../../models/report.model';
 import { ReportsApiService } from '../../../services/reports.api.service';
-import { useHistory } from 'react-router';
+// import { useHistory } from 'react-router';
 
 const BootstrapInput = withStyles((theme: Theme) =>
   createStyles({
@@ -72,7 +72,7 @@ const initialValues = {
 export default function Contact() {
     const { appState } = useContext(AppContext);
     const { user } = appState;
-    const history = useHistory();
+    // const history = useHistory();
     const classes = useStyles();
     const [values, setValues] = useState(initialValues);
     const [type, setType] = React.useState('');
@@ -97,7 +97,7 @@ export default function Contact() {
             email: user.email,
         }
         await reportService.submitReport(report);
-        history.replace("/")
+        // history.replace("/")
     }
 
 

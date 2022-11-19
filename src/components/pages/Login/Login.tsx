@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useHistory } from 'react-router';
+// import { useHistory } from 'react-router';
 import { LoginApiService } from '../../../services/login.api.service';
 import * as yup from 'yup';
 import { AppContext } from '../../core/contexts/app-context/appContext';
@@ -52,7 +52,7 @@ const validationSchema = yup.object().shape({
 
 const Login: React.FC = () => {
 
-  const history = useHistory();
+  // const history = useHistory();
   const classes = useStyles();
   const loginService = new LoginApiService();
   const { login } = useContext(AppContext);
@@ -78,7 +78,7 @@ const Login: React.FC = () => {
       localStorage.setItem('token', token);
       login(userProfile, token);
       actions.setSubmitting(false);
-      history.replace('/');
+      // history.replace('/');
     }
 
   }

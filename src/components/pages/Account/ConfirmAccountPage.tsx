@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router';
+// import { useHistory } from 'react-router';
 import { UsersApiService } from '../../../services';
 import * as yup from 'yup';
 import { Form, Formik, FormikProps } from 'formik';
@@ -65,7 +65,7 @@ const emptyUser: User = {
 
 export default function ConfirmAccountPage() {
     const classes = useStyles();
-    const history = useHistory();
+    // const history = useHistory();
     const userService = new UsersApiService();
 
     const code = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
@@ -98,7 +98,7 @@ export default function ConfirmAccountPage() {
         await userService.confirmAccount(confirmAcc);
         
         actions.setSubmitting(false);
-        history.replace('/');
+        // history.replace('/');
     }
 
     const renderConfirmAccount = () => {
